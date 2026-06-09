@@ -123,8 +123,8 @@ test("retries transient fetch failures before succeeding", async () => {
 
 test("returns 400 for missing URL", async () => {
   const app = createApp({
-    apiKey: "test-key",
-    allowedOrigins: ["http://localhost:3000"],
+    apiKey: process.env.API_KEY
+});
     fetchImpl: async () => ({
       ok: true,
       json: async () => ({})
